@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+
+:root {
+    --line-border-empty: #e0e0e0;
+    --line-border-fill: #3498db;
+}
+
+* {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f6f7fb;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    width: 350px;
+    margin-bottom: 40px;
+}
+
+.progress-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    background-color: var(--line-border-empty);
+    z-index: -1;
+}
+
+.progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 0;
+    transform: translateY(-50%);
+    background-color: var(--line-border-fill);
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: var(--line-border-empty);
+    height: 32px;
+    width: 32px;
+    border: 3px solid var(--line-border-empty);
+    border-radius: 50px;
+    transition: all 0.5s ease;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+    color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
